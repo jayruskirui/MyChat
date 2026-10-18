@@ -19,7 +19,7 @@ class AuthRepository {
     }
 
     fun register(email: String, password: String, result: (Boolean, String?) -> Unit) {
-        auth.signInWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     result(true, null)
