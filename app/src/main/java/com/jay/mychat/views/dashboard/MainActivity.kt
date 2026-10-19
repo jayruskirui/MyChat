@@ -11,6 +11,7 @@ import com.jay.mychat.R
 import com.jay.mychat.databinding.ActivityMainBinding
 import com.jay.mychat.views.adapter.UsersAdapter
 import com.jay.mychat.views.auth.LoginActivity
+import com.jay.mychat.views.chat.ChatActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -25,7 +26,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         adapter = UsersAdapter(emptyList()) { user ->
-
+            val intent = Intent(this, ChatActivity::class.java)
+            intent.putExtra("receiverId", user.uid)
+            intent.putExtra("receiverEmail", user.email)
+            startActivity(intent)
         }
 
         binding.recyclerview.layoutManager = LinearLayoutManager(this)
