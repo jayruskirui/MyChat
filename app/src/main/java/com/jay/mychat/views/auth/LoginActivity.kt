@@ -3,13 +3,9 @@ package com.jay.mychat.views.auth
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.jay.mychat.MainActivity
-import com.jay.mychat.R
+import com.jay.mychat.views.dashboard.MainActivity
 import com.jay.mychat.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
